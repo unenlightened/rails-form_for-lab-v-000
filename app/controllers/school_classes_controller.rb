@@ -16,15 +16,12 @@ class SchoolClassesController < ApplicationController
   end
 
   def update
-    set_school_class
-    set_school_class.update(post_params)
+    @school_class = SchoolClass.find(params[:id])
+    @school_class.update(post_params)
     redirect_to set_school_class
   end
 
   private
-  def set_school_class
-    @school_class = SchoolClass.find(params[:id])
-  end
 
   def post_params
     params.require(:post).permit(:title, :room_number)
