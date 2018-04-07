@@ -30,6 +30,6 @@ class SchoolClassesController < ApplicationController
   end
 
   def school_class_params
-    params.require(:school_class).permit(:title, :room_number)
+    params.require(:school_class).permit(:school_class_title, :school_class_room_number)
   end
 end
