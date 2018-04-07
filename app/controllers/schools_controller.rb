@@ -4,6 +4,9 @@ class SchoolsController < ApplicationController
   end
 
   def create
+    @school = School.new(post_params)
+    @school.save
+    redirect_to @school
   end
 
   def show
