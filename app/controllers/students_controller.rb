@@ -27,6 +27,6 @@ class StudentsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :room_number)
+    params.require(:post).permit(:first_name, :last_name)
   end
 end
