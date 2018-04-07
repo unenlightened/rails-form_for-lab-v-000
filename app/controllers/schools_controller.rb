@@ -16,6 +16,9 @@ class SchoolsController < ApplicationController
   end
 
   def update
+    set_school
+    set_school.update(post_params)
+    redirect_to set_school
   end
 
   private
