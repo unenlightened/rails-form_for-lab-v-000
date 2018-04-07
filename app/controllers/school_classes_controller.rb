@@ -4,9 +4,9 @@ class SchoolClassesController < ApplicationController
   end
 
   def create
-    @school = School.new(post_params)
-    @school.save
-    redirect_to @school
+    @school_class = SchoolClass.new(post_params)
+    @school_class.save
+    redirect_to @school_class
   end
 
   def show
@@ -16,14 +16,14 @@ class SchoolClassesController < ApplicationController
   end
 
   def update
-    set_school
-    set_school.update(post_params)
-    redirect_to set_school
+    set_school_class
+    set_school_class.update(post_params)
+    redirect_to set_school_class
   end
 
   private
-  def set_school
-    @school = School.find(params[:id])
+  def set_school_class
+    @school_class = SchoolClass.find(params[:id])
   end
 
   def post_params
