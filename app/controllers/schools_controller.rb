@@ -16,6 +16,9 @@ class SchoolsController < ApplicationController
   end
 
   private
+  def set_school
+    @school = School.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:title, :description)
