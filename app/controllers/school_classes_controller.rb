@@ -23,7 +23,7 @@ class SchoolClassesController < ApplicationController
 
   private
 
-  def post_params
-    params.require(:post).permit(:title, :room_number)
+  def school_class_params
+    params.require(:school_class).permit(:title, :room_number)
   end
 end
