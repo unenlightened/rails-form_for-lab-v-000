@@ -1,6 +1,7 @@
 class SchoolClassesController < ApplicationController
 
   def new
+    @school_class = SchoolClass.new
   end
 
   def create
@@ -10,19 +11,23 @@ class SchoolClassesController < ApplicationController
   end
 
   def show
-    @school_class = SchoolClass.find(params[:id])
+    set_school_class
   end
 
   def edit
+    set_school_class
   end
 
   def update
-    @school_class = SchoolClass.find(params[:id])
-    @school_class.update(school_class_params)
+    set_school_class
+    set_school_class.update(school_class_params)
     redirect_to set_school_class
   end
 
   private
+  def set_school_class
+    @school_class = SchoolClass.find(params[:id])
+  end
 
   def school_class_params
     params.require(:school_class).permit(:title, :room_number)
